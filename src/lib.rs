@@ -120,6 +120,7 @@ const HTML_TAGS: [&str; 117] = [
     "wbr",
 ];
 
+/// Check if a string is HTML
 pub fn is_html(str: &str) -> bool {
     let re = Regex::new(r"\s?<!doctype html>|(<html\b[^>]*>|<body\b[^>]*>|<x-[^>]+>)+").unwrap();
     let re_full_str = HTML_TAGS.map(|x| format!("<{}\\b[^>]*>", x)).join("|");
